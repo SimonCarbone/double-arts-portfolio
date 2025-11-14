@@ -17,7 +17,9 @@
       --radius: 24px;
       --shadow: 0 25px 60px rgba(0,0,0,0.65);
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       padding: 0;
@@ -25,11 +27,298 @@
       background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       color: var(--white);
     }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 22px 80px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    header h1 span { color: var(--gold); }
+
+    header .line {
+      width: 120px;
+      height: 2px;
+      margin: 0 auto;
+      background: var(--gold);
+      box-shadow: 0 0 14px var(--gold);
+    }
+
+    .section-title {
+      margin-top: 70px;
+      font-size: 1.1rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .video-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+      transition: 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 70px rgba(212,175,55,0.25);
+      border-color: var(--gold);
+    }
+
+    /* FRAME VIMEO */
+    .video-frame {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: #000;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.28);
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* THUMB YOUTUBE */
+    .thumb-frame {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(212,175,55,0.28);
+      background: #000;
+    }
+
+    .thumb-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .thumb-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
+      transition: 0.25s ease;
+    }
+
+    .thumb-play {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.35);
+    }
+
+    .thumb-play::before {
+      content: "";
+      border-style: solid;
+      border-width: 11px 0 11px 18px;
+      border-color: transparent transparent transparent #ffffff;
+      margin-left: 4px;
+    }
+
+    .thumb-frame:hover .thumb-overlay {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.75));
+    }
+
+    .thumb-link {
+      display: block;
+      position: absolute;
+      inset: 0;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .video-title {
+      font-size: 1.05rem;
+      margin-top: 14px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .video-meta {
+      font-size: 0.85rem;
+      margin-top: 4px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .video-meta a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .video-meta a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+    }
   </style>
 </head>
 
 <body>
-  <h1>Double Arts Portfolio — FILE PRONTO</h1>
-  <p>Questa è solo una test preview. Il file completo è identico al codice fornito in chat.</p>
+  <div class="page">
+    <header>
+      <h1><span>Show & Acts</span> Portfolio<br>Double Arts</h1>
+      <div class="line"></div>
+    </header>
+
+
+    <!-- ========================= LOLLIPOP ========================= -->
+    <h2 class="section-title">Lollipop</h2>
+
+    <div class="grid">
+      <article class="video-card">
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/1112913390" allowfullscreen></iframe>
+        </div>
+        <div class="video-title">Lollipop Champagne</div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/968963682" allowfullscreen></iframe>
+        </div>
+        <div class="video-title">Lollipop Duo</div>
+      </article>
+
+      <article class="video-card">
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/968986041" allowfullscreen></iframe>
+        </div>
+        <div class="video-title">Lollipop St. Barth</div>
+      </article>
+    </div>
+
+
+    <!-- ========================= PASSO A DUE ========================= -->
+    <h2 class="section-title">Passo a Due</h2>
+
+    <div class="grid">
+      <article class="video-card">
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/1134634356" allowfullscreen></iframe>
+        </div>
+        <div class="video-title">Passo a Due</div>
+      </article>
+
+      <!-- YouTube PASSO A DUE ELEGANTE -->
+      <article class="video-card">
+        <div class="thumb-frame">
+          <a class="thumb-link" href="https://www.youtube.com/shorts/OUbtBxiTdRY" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/OUbtBxiTdRY/hqdefault.jpg" alt="Passo a Due Elegante">
+            <div class="thumb-overlay">
+              <div class="thumb-play"></div>
+            </div>
+          </a>
+        </div>
+        <div class="video-title">Passo a Due Elegante</div>
+        <div class="video-meta">
+          <a href="https://www.youtube.com/shorts/OUbtBxiTdRY" target="_blank">Guarda su YouTube ↗</a>
+        </div>
+      </article>
+    </div>
+
+
+    <!-- ========================= CONTORSIONE ========================= -->
+    <h2 class="section-title">Contorsione & Pedana</h2>
+
+    <div class="grid">
+      <article class="video-card">
+        <div class="video-frame">
+          <iframe src="https://player.vimeo.com/video/1057675531" allowfullscreen></iframe>
+        </div>
+        <div class="video-title">Contorsione su Pedana Girevole</div>
+      </article>
+    </div>
+
+
+    <!-- ========================= AERIAL ========================= -->
+    <h2 class="section-title">Aerial / Cerchio Aereo</h2>
+
+    <div class="grid">
+      <!-- YouTube STRUTTURA AEREA -->
+      <article class="video-card">
+        <div class="thumb-frame">
+          <a class="thumb-link" href="https://www.youtube.com/shorts/AkFSGXe-tMM" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/AkFSGXe-tMM/hqdefault.jpg" alt="Struttura Aerea">
+            <div class="thumb-overlay">
+              <div class="thumb-play"></div>
+            </div>
+          </a>
+        </div>
+        <div class="video-title">Struttura Aerea</div>
+        <div class="video-meta">
+          <a href="https://www.youtube.com/shorts/AkFSGXe-tMM" target="_blank">Guarda su YouTube ↗</a>
+        </div>
+      </article>
+
+      <!-- YouTube CERCHIO AEREO DUO -->
+      <article class="video-card">
+        <div class="thumb-frame">
+          <a class="thumb-link" href="https://www.youtube.com/watch?v=SqLyBOfJfnA" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/SqLyBOfJfnA/hqdefault.jpg" alt="Cerchio Aereo Duo">
+            <div class="thumb-overlay">
+              <div class="thumb-play"></div>
+            </div>
+          </a>
+        </div>
+        <div class="video-title">Cerchio Aereo Duo</div>
+        <div class="video-meta">
+          <a href="https://www.youtube.com/watch?v=SqLyBOfJfnA" target="_blank">Guarda su YouTube ↗</a>
+        </div>
+      </article>
+    </div>
+
+
+    <footer>
+      Show & Acts Portfolio — Double Arts
+    </footer>
+
+  </div>
 </body>
 </html>
